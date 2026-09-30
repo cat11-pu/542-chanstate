@@ -1,0 +1,30 @@
+{
+  "config": {
+    "axis": "seq",
+    "continuousSeq": true,
+    "timeFormat": "rfc3339",
+    "timeToleranceMs": 1500,
+    "outOfOrder": "reorder",
+    "gapThreshold": 2,
+    "duplicate": "first"
+  },
+  "messages": [
+    {"channel": "/meta/handshake", "seq": 0, "time": "2026-09-29T10:00:00.100Z", "data": "version=1.0"},
+    {"channel": "/meta/handshake", "seq": 0, "time": "2026-09-29T10:00:00.200Z", "data": "version=1.0 retry"},
+    {"channel": "/meta/handshake", "seq": 1, "time": "2026-09-29T10:00:00.300Z", "data": "clientId=abc123"},
+    {"channel": "/meta/subscribe", "seq": 0, "time": "2026-09-29T10:00:01.000Z", "data": "subscription=/bar/baz"},
+    {"channel": "/meta/connect", "seq": 0, "time": "2026-09-29T10:00:02.000Z", "data": "connectionType=long-polling"},
+    {"channel": "/meta/connect", "seq": 1, "time": "2026-09-29T10:00:03.000Z", "data": "connectionType=long-polling"},
+    {"channel": "/meta/connect", "seq": 2, "time": "2026-09-29T10:00:04.000Z", "data": "connectionType=long-polling"},
+    {"channel": "/bar/baz", "seq": 1, "time": "2026-09-29T10:00:05.000Z", "data": "alpha"},
+    {"channel": "/bar/baz", "seq": 2, "time": "2026-09-29T10:00:06.000Z", "data": "beta"},
+    {"channel": "/bar/baz", "seq": 7, "time": "2026-09-29T10:00:07.000Z", "data": "eta"},
+    {"channel": "/bar/baz", "seq": 14, "time": "2026-09-29T10:00:08.000Z", "data": "nu"},
+    {"channel": "/bar/baz", "seq": 16, "time": "2026-09-29T10:00:09.000Z", "data": "pi"},
+    {"channel": "/bar/baz", "seq": 10, "time": "2026-09-29T10:00:07.400Z", "data": "kappa"},
+    {"channel": "/meta/publish", "seq": 0, "time": "2026-09-29T10:00:10.000Z", "data": "publish-is-unsupported"},
+    {"channel": "bar/baz", "seq": 8, "time": "2026-09-29T10:00:10.500Z", "data": "missing-leading-slash"},
+    {"channel": "/meta/connect", "time": "2026-09-29T10:00:11.000Z", "data": "connectionType=long-polling"},
+    {"channel": "/bar/baz", "seq": 9, "time": "2026-09-29T10:00:08.600Z", "data": "iota"}
+  ]
+}
